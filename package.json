@@ -1,0 +1,20 @@
+{
+	"name": "dijit-intern-helper",
+	"version": "1.0.0-pre",
+	"description": "A simple Intern helper utility for writing functional tests with Dijit",
+	"homepage": "http://theintern.io",
+	"bugs": {
+		"url": "https://github.com/dylans/dijit-intern-helper/issues"
+	},
+	"license": "BSD-3-Clause",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dylans/dijit-intern-helper.git"
+	},
+	"devDependencies": {
+		"dojo": "1.11.0-pre",
+		"dijit": "1.11.0-pre",
+		"intern": "3.0.6",
+		"leadfoot": "1.6.5"
+	}
+}
