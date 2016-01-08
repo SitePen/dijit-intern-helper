@@ -22,7 +22,7 @@ module.exports = {
 	/**
 	 * A widget object with a reference to all of its methods
 	 *
-	 * @memberOf module:leadfoot/helpers/dijit#
+	 * @memberOf module:dijit-intern-helper/helpers/dijit#
 	 *
 	 * @param {string} widgetId
 	 * An id for a Dijit reference
