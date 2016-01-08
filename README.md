@@ -3,7 +3,7 @@ A simple Intern helper utility for writing functional tests with Dijit
 
 ## Example usage
 
-```
+```js
 define([
 	'intern!object', 'intern/chai!assert', 'require',
 	'intern/dojo/node!dijit-intern-helper/helpers/dijit',
@@ -63,7 +63,7 @@ boilerplate that would be needed otherwise.
 
 The example above assumes an HTML file like this:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
