@@ -14,7 +14,7 @@
  *
  * new Command(session)
  *     .get('http://example.com')
- *     .then(dijit.getNode('someId', 'domNode'))
+ *     .then(dijit.nodyById('someId', 'domNode'))
  *     .click();
  */
 
