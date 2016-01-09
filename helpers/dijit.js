@@ -20,7 +20,9 @@
 
 module.exports = {
 	/**
-	 * A widget object with a reference to all of its methods
+	 * A widget object with a serialized reference to all of its methods.
+	 * Note that references to DOM objects are not valid DOM objects for
+	 * use within WebDriver.
 	 *
 	 * @memberOf module:dijit-intern-helper/helpers/dijit#
 	 *
