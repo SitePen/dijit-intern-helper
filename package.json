@@ -12,9 +12,9 @@
 		"url": "https://github.com/dylans/dijit-intern-helper.git"
 	},
 	"devDependencies": {
-		"dojo": "1.11.0-pre",
-		"dijit": "1.11.0-pre",
-		"intern": "3.0.6",
-		"leadfoot": "1.6.5"
+		"dojo": "^1.11.0",
+		"dijit": "^1.11.0",
+		"intern": "^3.0.6",
+		"leadfoot": "^1.6.5"
 	}
 }

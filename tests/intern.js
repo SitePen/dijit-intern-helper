@@ -15,14 +15,14 @@ define({
 
 	maxConcurrency: 2,
 	tunnel: 'BrowserStackTunnel',
+	reporters: [ 'Combined' ],
 
-	reporters: [ 'combined' ],
-
-	loader: {
+	loaderOptions: {
 		packages: [
 			{ name: 'leadfoot', location: '.' },
 			{ name: 'dojo', location: './node_modules/dojo' },
-			{ name: 'dijit', location: './node_modules/dijit' }
+			{ name: 'dijit', location: './node_modules/dijit' },
+			{ name: 'tests', location: 'tests' }
 		]
 	},
 
@@ -30,7 +30,7 @@ define({
 	],
 
 	functionalSuites: [
-		'dijit-intern-helper/tests/functional/helpers/dijit'
+		'tests/functional/helpers/dijit'
 	],
 
 	excludeInstrumentation: /^(?:tests|node_modules)\//
