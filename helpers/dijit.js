@@ -32,12 +32,28 @@ module.exports = {
 	byId: function (widgetId) {
 		function getMethods(session, widgetId) {
 			return session.executeAsync(function (widgetId, done) {
+				function getAllProperties(obj){
+					var allProps = [];
+					var curr = obj;
+					while(curr) {
+						var props = Object.getOwnPropertyNames(curr);
+						props.forEach(function (prop){
+							if (allProps.indexOf(prop) === -1)
+								allProps.push(prop);
+						}); 
+						curr = Object.getPrototypeOf(curr)
+					}
+
+					return allProps;
+				}
 				require([ 'dijit/registry', 'dojo/when' ], function (registry, when) {
 					var widget = registry.byId(widgetId);
 					if (!widget) {
 						done(new Error('Could not find widget "' + widgetId + '"'));
 					}
-					when(widget[key].apply(widget, args)).always(done);
+					when(getAllProperties(widget).filter(function (property) {
+						return widget[property] && widget[property].apply
+					})).always(done);
 				});
 			}, [widgetId]);
 		}
@@ -118,6 +134,7 @@ module.exports = {
 				});
 			}, [widgetId, attachPoint]).then(function (node) {
 				setContext(node);
+				return node;
 			});
 		};
 	}

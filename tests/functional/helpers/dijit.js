@@ -1,20 +1,17 @@
 define([
 	'intern!object',
 	'intern/chai!assert',
-	'intern/dojo/node!../../../Command',
+	'intern/dojo/node!leadfoot/Command',
 	'intern/dojo/node!../../../helpers/dijit',
-	'leadfoot/tests/functional/support/util',
 	'require'
-], function (registerSuite, assert, Command, remoteRegistry, util, require) {
+], function (registerSuite, assert, Command, remoteRegistry, require) {
 	registerSuite(function () {
 		var command;
 		return {
 			name: 'dijit-intern-helper/helpers/dijit',
 
 			setup: function () {
-				return util.createSessionFromRemote(this.remote).then(function (session) {
-					command = new Command(session);
-				});
+				command = new Command(this.remote);
 			},
 
 			'.getProperty': function () {
@@ -53,8 +50,10 @@ define([
 					.setExecuteAsyncTimeout(4000)
 					.then(remoteRegistry.nodeById('foo', 'node'))
 					.then(function (node) {
-						assert.strictEqual(node.tagName, 'div', 'widget.getNode(foo, node).tagName === div');
-					})
+						return node.getTagName();
+					}).then(function(tagName) {
+						assert.strictEqual(tagName, 'div', 'widget.getNode(foo, node).tagName === div');
+					});
 			}
 
 		};
