@@ -11,7 +11,7 @@ define([
 			name: 'dijit-intern-helper/helpers/dijit',
 
 			setup: function () {
-			    command = new Command(this.remote);
+				command = new Command(this.remote);
 			},
 
 			'.getProperty': function () {
